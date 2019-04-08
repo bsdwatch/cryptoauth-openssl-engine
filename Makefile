@@ -134,6 +134,14 @@ LIBCRYPTOAUTH_OBJECTS += atca_hal.c
 
 HAL_OBJECTS:=
 
+
+OPTIONS := ATCAPRINTF ATCA_HAL_I2C ENGINE_DYNAMIC_SUPPORT USE_ECCX08 ECC_DEBUG
+ 
+SYSTEM_INCLUDES := /usr/include
+ 
+TARGET_HAL = I2C
+
+
 ifeq ($(TARGET_ARCH),Windows)
 # Only kit protocol hals are available on windows
 HAL_OBJECTS += hal_win_kit_cdc.c hal_win_timer.c hal_win_os.c kit_protocol.c
